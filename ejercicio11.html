@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="root">
+        <!--Render code React-js-->
+    </div>
+
+    <!-- Cargar React. -->
+    <!-- Nota: cuando se despliegue, reemplazar "development.js" con "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Cargamos nuestro componente de React. -->
+    <script type="text/babel">
+        // nota cada codigo que veas documentado de aca para abajo
+        // seran diferentes formas de realizarlo con jsx los coloco para
+        // que podamos probar y mirar diferentes formas de como podriamos realizarlos
+        // los 12 ejercicios
+
+        // 0. guardado de datos simple
+        const data = {
+            titulo: "Registro en nuestra tienda",
+            nombre: <label for="Nombre">Nombre de usuario</label>,
+            email: <label for="email">Email:</label>,
+            edad: <label for="edad">Edad:</label>,
+            genero: <label for="genero">Genero:</label>,
+            recomendado: <label for="recomendado">Recomendado por:</label>,
+            comentario: <label for="comentario">comentarios:</label>,
+            terminos: <label for="terminos">Acepto terminos y condiciones:</label>,
+
+        }
+
+        const element = (
+            <div>
+                <h1>{data.titulo}</h1>
+                <p>{data.nombre}</p>
+                <p><input type="text" id="Nombre" value="Ej Luis" name="Nombre" /></p>
+                <p>{data.email}</p>
+                <p><input type="text" id="email" value="Ej Luis@gmail.com" name="email" /></p>
+                <p>{data.edad}</p>
+                <p><input type="text" id="edad" value="Ej: 21 " name="edad" /></p>
+                <p>{data.genero}</p>
+                <p><input type="radio" id="m" name="Masculino" value="Masculino" />
+                    <label for="m">Masculino</label></p>
+                <p><input type="radio" id="f" name="Femenino" value="Femenino" />
+                    <label for="f">Femenino</label></p>
+                <p>{data.recomendado}</p>
+                <select name="recomendado" id="recomendado">
+                    <option value="Google">Google</option>
+                    <option value="otro">otro</option>
+                </select>
+                <p>{data.comentario}</p>
+                <textarea name="comentarios" rows="8" cols="35">Escribe aquí tus comentarios</textarea>
+                <p>{data.terminos}</p>
+                <input type="checkbox" id="terminos" name="terminos" value="terminos"/>
+                <p><button type="button" onclick="Registrado con exito">Registrar</button></p>
+                    </div>
+                    )
+
+                    // Renderiamos o pintamos
+                    ReactDOM.render(
+                    element,// estructura jsx para pintar
+                    document.getElementById('root')// elemento donde se pintara
+                    );
+    </script>
+</body>
+
+</html>
